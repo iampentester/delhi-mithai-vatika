@@ -3,89 +3,188 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Delhi Mithai Vatika | Best Sweets at Lal Darwaza Cross Roads, Charminar</title>
-  <meta name="description" content="Delhi Mithai Vatika - Pure vegetarian sweets & chaat shop at Lal Darwaza Cross Roads, Charminar, Hyderabad. Fresh mithai, hygienic, family friendly." />
-  <meta name="keywords" content="Delhi Mithai Vatika, Lal Darwaza sweets, Charminar mithai, Hyderabad sweet shop" />
+  <title>Delhi Mithai Vatika | Premium Sweets at Lal Darwaza Cross Roads, Charminar</title>
+  <meta name="description" content="Delhi Mithai Vatika - Pure vegetarian sweets & chaat shop at Lal Darwaza Cross Roads, Charminar, Hyderabad. Fresh mithai, hygienic, family favourite since years." />
+  <meta name="keywords" content="Delhi Mithai Vatika, Lal Darwaza sweets, Charminar mithai, Hyderabad sweet shop, best mithai near Charminar" />
   
-  <!-- Tailwind CSS via CDN -->
+  <!-- Open Graph -->
+  <meta property="og:title" content="Delhi Mithai Vatika | Lal Darwaza Cross Roads" />
+  <meta property="og:description" content="Premium pure vegetarian sweets & chaat in the heart of Charminar." />
+  <meta property="og:type" content="website" />
+
   <script src="https://cdn.tailwindcss.com"></script>
-  
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    
     body { font-family: 'Poppins', sans-serif; }
+    
     .hero-bg {
-      background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), 
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.65)), 
                   url('https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
       background-size: cover;
       background-position: center;
     }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    .menu-card:hover img {
+      transform: scale(1.08);
+    }
   </style>
 </head>
-<body class="bg-amber-50 text-gray-800">
+<body class="bg-orange-50 text-gray-800">
 
   <!-- ========== NAVBAR ========== -->
-  <nav class="bg-white shadow-md sticky top-0 z-50">
+  <nav class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-      <div class="flex items-center gap-2">
-        <span class="text-2xl font-bold text-amber-700">Delhi Mithai Vatika</span>
-      </div>
-      <div class="hidden md:flex gap-6 text-sm font-medium">
-        <a href="#home" class="hover:text-amber-700">Home</a>
-        <a href="#about" class="hover:text-amber-700">About</a>
-        <a href="#menu" class="hover:text-amber-700">Menu</a>
-        <a href="#gallery" class="hover:text-amber-700">Gallery</a>
-        <a href="#contact" class="hover:text-amber-700">Contact</a>
-      </div>
-      <a href="tel:+919347873855" class="bg-amber-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-amber-700 transition">
-        <i class="fas fa-phone"></i> Call Now
+      <a href="#" class="text-xl md:text-2xl font-bold text-amber-800">
+        Delhi Mithai <span class="text-amber-600">Vatika</span>
       </a>
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#home" class="hover:text-amber-700 transition">Home</a>
+        <a href="#about" class="hover:text-amber-700 transition">About</a>
+        <a href="#menu" class="hover:text-amber-700 transition">Menu</a>
+        <a href="#gallery" class="hover:text-amber-700 transition">Gallery</a>
+        <a href="#contact" class="hover:text-amber-700 transition">Contact</a>
+        <a href="tel:+919347873855" class="bg-amber-600 text-white px-5 py-2.5 rounded-full hover:bg-amber-700 transition flex items-center gap-2">
+          <i class="fas fa-phone text-sm"></i> Call Now
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <button id="menu-btn" class="md:hidden text-2xl text-amber-800">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+      <div class="flex flex-col px-4 py-4 gap-4 text-sm font-medium">
+        <a href="#home" class="py-2">Home</a>
+        <a href="#about" class="py-2">About</a>
+        <a href="#menu" class="py-2">Menu</a>
+        <a href="#gallery" class="py-2">Gallery</a>
+        <a href="#contact" class="py-2">Contact</a>
+        <a href="tel:+919347873855" class="bg-amber-600 text-white text-center py-3 rounded-lg">Call Now</a>
+      </div>
     </div>
   </nav>
 
   <!-- ========== HERO ========== -->
-  <section id="home" class="hero-bg text-white py-24 md:py-32">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Delhi Mithai Vatika</h1>
-      <p class="text-xl md:text-2xl mb-2">Pure Vegetarian Sweets & Chaat</p>
-      <p class="text-lg mb-8 opacity-90">Lal Darwaza Cross Roads, Charminar, Hyderabad</p>
+  <section id="home" class="hero-bg text-white min-h-[85vh] flex items-center">
+    <div class="max-w-6xl mx-auto px-4 py-20 text-center">
+      <div class="inline-block glass px-4 py-1.5 rounded-full text-sm mb-6">
+        Pure Vegetarian • Fresh Daily
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+        Delhi Mithai Vatika
+      </h1>
+      <p class="text-xl md:text-2xl mb-3 font-light">Premium Sweets & Chaat</p>
+      <p class="text-lg opacity-90 mb-10">Lal Darwaza Cross Roads, Charminar, Hyderabad</p>
+      
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="tel:+919347873855" class="bg-amber-600 hover:bg-amber-700 px-8 py-3 rounded-full font-semibold text-lg transition">
-          <i class="fas fa-phone-alt"></i> +91 93478 73855
+        <a href="tel:+919347873855" class="bg-amber-600 hover:bg-amber-700 px-8 py-4 rounded-full font-semibold text-lg transition shadow-lg">
+          <i class="fas fa-phone-alt mr-2"></i> +91 93478 73855
         </a>
-        <a href="https://wa.me/919347873855" target="_blank" class="bg-green-600 hover:bg-green-700 px-8 py-3 rounded-full font-semibold text-lg transition">
-          <i class="fab fa-whatsapp"></i> WhatsApp
+        <a href="https://wa.me/919347873855" target="_blank" class="bg-green-600 hover:bg-green-700 px-8 py-4 rounded-full font-semibold text-lg transition shadow-lg">
+          <i class="fab fa-whatsapp mr-2"></i> WhatsApp Order
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ========== ABOUT ========== -->
-  <section id="about" class="py-16 bg-white">
+  <!-- ========== WHY CHOOSE US ========== -->
+  <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-10 text-amber-800">About Us</h2>
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <p class="text-lg leading-relaxed mb-4">
-            Welcome to <strong>Delhi Mithai Vatika</strong>, a well-known pure vegetarian sweet shop located at the heart of <strong>Lal Darwaza Cross Roads, Charminar</strong>.
-          </p>
-          <p class="text-lg leading-relaxed mb-4">
-            We are known for fresh, hygienic mithai and delicious chaat. Families from Lal Darwaza, Shalibanda, Gowlipura and nearby areas visit us regularly for quality sweets at reasonable prices.
-          </p>
-          <p class="text-lg leading-relaxed">
-            Open daily from early morning till late evening. Perfect for daily mithai, festival orders, and evening chaat.
-          </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-6">
+          <div class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4 text-amber-700 text-2xl">
+            <i class="fas fa-leaf"></i>
+          </div>
+          <h3 class="font-bold mb-1">100% Pure Veg</h3>
+          <p class="text-sm text-gray-600">No compromise on purity</p>
         </div>
-        <div class="bg-amber-100 p-8 rounded-2xl">
-          <h3 class="font-bold text-xl mb-4 text-amber-800">Quick Info</h3>
-          <ul class="space-y-3">
-            <li><i class="fas fa-map-marker-alt text-amber-600 w-6"></i> Lal Darwaza Cross Roads, Charminar, Hyderabad</li>
-            <li><i class="fas fa-clock text-amber-600 w-6"></i> 7:00 AM – 11:00 PM (Approx.)</li>
-            <li><i class="fas fa-rupee-sign text-amber-600 w-6"></i> ₹200 for two (approx.)</li>
-            <li><i class="fas fa-leaf text-amber-600 w-6"></i> 100% Pure Vegetarian</li>
-            <li><i class="fas fa-phone text-amber-600 w-6"></i> +91 93478 73855</li>
+        <div class="p-6">
+          <div class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4 text-amber-700 text-2xl">
+            <i class="fas fa-clock"></i>
+          </div>
+          <h3 class="font-bold mb-1">Fresh Daily</h3>
+          <p class="text-sm text-gray-600">Made every morning</p>
+        </div>
+        <div class="p-6">
+          <div class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4 text-amber-700 text-2xl">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h3 class="font-bold mb-1">Prime Location</h3>
+          <p class="text-sm text-gray-600">Lal Darwaza Cross Roads</p>
+        </div>
+        <div class="p-6">
+          <div class="w-14 h-14 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4 text-amber-700 text-2xl">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3 class="font-bold mb-1">Family Favourite</h3>
+          <p class="text-sm text-gray-600">Trusted by locals</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" class="py-20 bg-orange-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-3">About Delhi Mithai Vatika</h2>
+        <div class="w-20 h-1 bg-amber-600 mx-auto"></div>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-lg leading-relaxed mb-5 text-gray-700">
+            Located at the bustling <strong>Lal Darwaza Cross Roads</strong> near Charminar, Delhi Mithai Vatika is a beloved pure vegetarian sweet shop serving the Old City of Hyderabad.
+          </p>
+          <p class="text-lg leading-relaxed mb-5 text-gray-700">
+            We are known for fresh mithai, traditional flavours, and hygienic preparation. Whether you need daily sweets, festival gift boxes, or evening chaat — we welcome you with open arms.
+          </p>
+          <div class="flex flex-wrap gap-4 mt-8">
+            <div class="bg-white px-5 py-3 rounded-lg shadow-sm">
+              <span class="font-bold text-amber-700">₹200</span>
+              <span class="text-sm text-gray-600"> for two</span>
+            </div>
+            <div class="bg-white px-5 py-3 rounded-lg shadow-sm">
+              <span class="font-bold text-amber-700">7 AM – 11 PM</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+          <h3 class="font-bold text-xl mb-6 text-amber-800">Visit Details</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <i class="fas fa-map-marker-alt text-amber-600 mt-1"></i>
+              <span>Lal Darwaza Cross Roads, Charminar, Hyderabad, Telangana 500065</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="fas fa-phone text-amber-600"></i>
+              <a href="tel:+919347873855" class="hover:text-amber-700 font-medium">+91 93478 73855</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="fas fa-clock text-amber-600"></i>
+              <span>Open Daily • 7:00 AM – 11:00 PM (Approx.)</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <i class="fas fa-utensils text-amber-600"></i>
+              <span>Pure Vegetarian • Takeaway Available</span>
+            </li>
           </ul>
         </div>
       </div>
@@ -93,108 +192,168 @@
   </section>
 
   <!-- ========== MENU ========== -->
-  <section id="menu" class="py-16 bg-amber-50">
+  <section id="menu" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-4 text-amber-800">Our Specialties</h2>
-      <p class="text-center text-gray-600 mb-10">Freshly prepared every day • Prices may vary</p>
-      
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Item -->
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
-          <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Kaju Katli" class="w-full h-48 object-cover">
-          <div class="p-5">
-            <h3 class="font-bold text-lg">Kaju Katli</h3>
-            <p class="text-gray-600 text-sm mt-1">Premium cashew sweet</p>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-3">Our Popular Sweets</h2>
+        <p class="text-gray-600">Freshly prepared every day</p>
+        <div class="w-20 h-1 bg-amber-600 mx-auto mt-3"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="menu-card bg-orange-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80" 
+                 alt="Kaju Katli" class="w-full h-52 object-cover transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-1">Kaju Katli</h3>
+            <p class="text-gray-600 text-sm">Premium cashew diamond sweet</p>
           </div>
         </div>
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
-          <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gulab Jamun" class="w-full h-48 object-cover">
-          <div class="p-5">
-            <h3 class="font-bold text-lg">Gulab Jamun</h3>
-            <p class="text-gray-600 text-sm mt-1">Soft & syrupy</p>
+
+        <!-- Card 2 -->
+        <div class="menu-card bg-orange-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=600&q=80" 
+                 alt="Gulab Jamun" class="w-full h-52 object-cover transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-1">Gulab Jamun</h3>
+            <p class="text-gray-600 text-sm">Soft, juicy & syrupy</p>
           </div>
         </div>
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
-          <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Rasgulla" class="w-full h-48 object-cover">
-          <div class="p-5">
-            <h3 class="font-bold text-lg">Rasgulla / Rasmalai</h3>
-            <p class="text-gray-600 text-sm mt-1">Bengali style</p>
+
+        <!-- Card 3 -->
+        <div class="menu-card bg-orange-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=600&q=80" 
+                 alt="Rasgulla" class="w-full h-52 object-cover transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-1">Rasgulla & Rasmalai</h3>
+            <p class="text-gray-600 text-sm">Bengali style spongy sweets</p>
           </div>
         </div>
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
-          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ladoo" class="w-full h-48 object-cover">
-          <div class="p-5">
-            <h3 class="font-bold text-lg">Motichoor & Besan Ladoo</h3>
-            <p class="text-gray-600 text-sm mt-1">Traditional favourites</p>
+
+        <!-- Card 4 -->
+        <div class="menu-card bg-orange-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80" 
+                 alt="Ladoo" class="w-full h-52 object-cover transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-1">Motichoor Ladoo</h3>
+            <p class="text-gray-600 text-sm">Classic festive favourite</p>
           </div>
         </div>
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
-          <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Barfi" class="w-full h-48 object-cover">
-          <div class="p-5">
-            <h3 class="font-bold text-lg">Milk Cake & Barfi</h3>
-            <p class="text-gray-600 text-sm mt-1">Rich & creamy</p>
+
+        <!-- Card 5 -->
+        <div class="menu-card bg-orange-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f3?auto=format&fit=crop&w=600&q=80" 
+                 alt="Barfi" class="w-full h-52 object-cover transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-1">Milk Cake & Barfi</h3>
+            <p class="text-gray-600 text-sm">Rich, creamy & traditional</p>
           </div>
         </div>
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition">
-          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Chaat" class="w-full h-48 object-cover">
-          <div class="p-5">
-            <h3 class="font-bold text-lg">Chaat & Snacks</h3>
-            <p class="text-gray-600 text-sm mt-1">Evening special</p>
+
+        <!-- Card 6 -->
+        <div class="menu-card bg-orange-50 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1601050690117-94f5f6a3c5c3?auto=format&fit=crop&w=600&q=80" 
+                 alt="Chaat" class="w-full h-52 object-cover transition duration-500">
+          </div>
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-1">Chaat Special</h3>
+            <p class="text-gray-600 text-sm">Evening chaat & snacks</p>
           </div>
         </div>
       </div>
-      <p class="text-center mt-8 text-sm text-gray-500">* Full menu available at the shop. Festival special boxes also available.</p>
+
+      <p class="text-center mt-10 text-gray-500 text-sm">
+        Full menu available at the shop. Festival gift boxes & bulk orders welcome.
+      </p>
     </div>
   </section>
 
   <!-- ========== GALLERY ========== -->
-  <section id="gallery" class="py-16 bg-white">
+  <section id="gallery" class="py-20 bg-orange-50">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-10 text-amber-800">Gallery</h2>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-3">Gallery</h2>
+        <div class="w-20 h-1 bg-amber-600 mx-auto"></div>
+      </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80" class="rounded-xl h-40 object-cover w-full" alt="Sweets">
-        <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=500&q=80" class="rounded-xl h-40 object-cover w-full" alt="Gulab Jamun">
-        <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=500&q=80" class="rounded-xl h-40 object-cover w-full" alt="Rasgulla">
-        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=500&q=80" class="rounded-xl h-40 object-cover w-full" alt="Mithai">
+        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=500&q=80" class="rounded-xl h-44 md:h-52 object-cover w-full shadow" alt="Sweets 1">
+        <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?auto=format&fit=crop&w=500&q=80" class="rounded-xl h-44 md:h-52 object-cover w-full shadow" alt="Sweets 2">
+        <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=500&q=80" class="rounded-xl h-44 md:h-52 object-cover w-full shadow" alt="Sweets 3">
+        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=500&q=80" class="rounded-xl h-44 md:h-52 object-cover w-full shadow" alt="Sweets 4">
       </div>
     </div>
   </section>
 
-  <!-- ========== LOCATION & CONTACT ========== -->
-  <section id="contact" class="py-16 bg-amber-50">
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="py-20 bg-white">
     <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-10 text-amber-800">Visit Us</h2>
-      
-      <div class="grid md:grid-cols-2 gap-10">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-3">Visit & Contact</h2>
+        <div class="w-20 h-1 bg-amber-600 mx-auto"></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10">
         <!-- Map -->
-        <div class="rounded-2xl overflow-hidden shadow-lg h-80">
+        <div class="rounded-2xl overflow-hidden shadow-xl h-96">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.3!2d78.477!3d17.346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDIwJzQ1LjAiTiA3OMKwMjgnMzcuNCJF!5e0!3m2!1sen!2sin!4v1690000000000" 
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            src="https://maps.google.com/maps?q=Lal%20Darwaza%20Cross%20Roads%20Charminar%20Hyderabad&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
           </iframe>
         </div>
 
-        <!-- Contact Card -->
-        <div class="bg-white p-8 rounded-2xl shadow-lg">
-          <h3 class="text-2xl font-bold mb-6 text-amber-800">Get in Touch</h3>
+        <!-- Contact Info -->
+        <div class="bg-gradient-to-br from-amber-700 to-amber-900 text-white p-8 md:p-10 rounded-2xl shadow-xl">
+          <h3 class="text-2xl font-bold mb-6">Get in Touch</h3>
           
-          <div class="space-y-4 mb-8">
-            <p><i class="fas fa-map-marker-alt text-amber-600 mr-3"></i> Lal Darwaza Cross Roads, Charminar, Hyderabad, Telangana 500065</p>
-            <p><i class="fas fa-phone text-amber-600 mr-3"></i> <a href="tel:+919347873855" class="hover:underline">+91 93478 73855</a></p>
-            <p><i class="fas fa-clock text-amber-600 mr-3"></i> Open daily ≈ 7:00 AM – 11:00 PM</p>
+          <div class="space-y-5 mb-8">
+            <div class="flex items-start gap-4">
+              <i class="fas fa-map-marker-alt text-xl mt-1"></i>
+              <div>
+                <p class="font-medium">Address</p>
+                <p class="opacity-90">Lal Darwaza Cross Roads, Charminar,<br>Hyderabad, Telangana 500065</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <i class="fas fa-phone text-xl"></i>
+              <div>
+                <p class="font-medium">Phone</p>
+                <a href="tel:+919347873855" class="opacity-90 hover:underline">+91 93478 73855</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <i class="fas fa-clock text-xl"></i>
+              <div>
+                <p class="font-medium">Timings</p>
+                <p class="opacity-90">7:00 AM – 11:00 PM (Daily)</p>
+              </div>
+            </div>
           </div>
 
           <div class="flex flex-col sm:flex-row gap-3">
-            <a href="tel:+919347873855" class="flex-1 bg-amber-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-amber-700 transition">
-              <i class="fas fa-phone"></i> Call Now
+            <a href="tel:+919347873855" class="flex-1 bg-white text-amber-800 text-center py-3.5 rounded-xl font-semibold hover:bg-orange-50 transition">
+              <i class="fas fa-phone mr-2"></i> Call Now
             </a>
-            <a href="https://wa.me/919347873855?text=Hi%2C%20I%20want%20to%20order%20sweets" target="_blank" class="flex-1 bg-green-600 text-white text-center py-3 rounded-lg font-semibold hover:bg-green-700 transition">
-              <i class="fab fa-whatsapp"></i> WhatsApp
+            <a href="https://wa.me/919347873855?text=Hi%2C%20I%20would%20like%20to%20order%20sweets" target="_blank" 
+               class="flex-1 bg-green-500 text-white text-center py-3.5 rounded-xl font-semibold hover:bg-green-600 transition">
+              <i class="fab fa-whatsapp mr-2"></i> WhatsApp
             </a>
           </div>
 
-          <a href="https://www.google.com/maps/search/?api=1&query=Lal+Darwaza+Cross+Roads+Charminar+Hyderabad" target="_blank" class="block mt-4 text-center text-amber-700 font-medium hover:underline">
-            <i class="fas fa-directions"></i> Get Directions on Google Maps
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Lal+Darwaza+Cross+Roads+Charminar+Hyderabad" 
+             target="_blank" class="block mt-5 text-center text-amber-100 hover:text-white transition">
+            <i class="fas fa-directions mr-1"></i> Get Directions
           </a>
         </div>
       </div>
@@ -202,19 +361,42 @@
   </section>
 
   <!-- ========== FOOTER ========== -->
-  <footer class="bg-amber-900 text-amber-100 py-8">
+  <footer class="bg-amber-950 text-amber-100 py-10">
     <div class="max-w-6xl mx-auto px-4 text-center">
-      <p class="font-bold text-xl mb-2">Delhi Mithai Vatika</p>
-      <p class="mb-4">Lal Darwaza Cross Roads • Charminar • Hyderabad</p>
-      <p class="text-sm opacity-80">© 2026 Delhi Mithai Vatika. All rights reserved. | Pure Vegetarian Sweets</p>
+      <h3 class="text-2xl font-bold mb-2">Delhi Mithai Vatika</h3>
+      <p class="mb-1">Lal Darwaza Cross Roads • Charminar • Hyderabad</p>
+      <p class="text-sm opacity-70 mb-6">Pure Vegetarian Sweets & Chaat</p>
+      <p class="text-xs opacity-50">© 2026 Delhi Mithai Vatika. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/919347873855" target="_blank" 
-     class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition z-50">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+  <!-- Floating Buttons -->
+  <div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+    <a href="https://wa.me/919347873855" target="_blank" 
+       class="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center text-2xl shadow-lg transition">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+919347873855" 
+       class="w-14 h-14 bg-amber-600 hover:bg-amber-700 text-white rounded-full flex items-center justify-center text-xl shadow-lg transition">
+      <i class="fas fa-phone"></i>
+    </a>
+  </div>
 
+  <!-- Mobile Menu Script -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  </script>
 </body>
 </html>
